@@ -45,3 +45,23 @@ namespace ThiccGames
         }
     }
 }
+
+.NewGame();
+        }
+        #endregion
+
+        private void NewGame()
+{
+    mResults = new MarkType[9];
+    for (var i = 0; i < mResults.Length; i++)
+        mResults[i] = MarkType.Free;
+
+    mPlayer1Turn = true;
+    //inerate all buttons
+    Container.Children.Cast<Button>().ToList().ForEach(button =>
+    {
+        button.Content = string.Empty;
+    });
+}
+    }
+}
