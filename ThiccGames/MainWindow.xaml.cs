@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace ThiccGames
 {
@@ -18,10 +19,6 @@ namespace ThiccGames
         #endregion
         #region Constructor
 
-        /// <summary>
-        /// Default constructor
-        /// </summary>
-
         public MainWindow()
         {
             InitializeComponent();
@@ -29,7 +26,7 @@ namespace ThiccGames
             NewGame();
         }
         #endregion
-
+        //resets the entire grid for new game.
         private void NewGame()
         {
             mResults = new MarkType[9];
@@ -40,28 +37,18 @@ namespace ThiccGames
             //inerate all buttons
             Container.Children.Cast<Button>().ToList().ForEach(button =>
             {
-                button.Content = string.Empty;
+                button.Content =  string.Empty;
+                button.Background = Brushes.White;
+                button.Foreground = Brushes.Blue;
             });
+
+            mGameEnded = false;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
 
-.NewGame();
-        }
-        #endregion
-
-        private void NewGame()
-{
-    mResults = new MarkType[9];
-    for (var i = 0; i < mResults.Length; i++)
-        mResults[i] = MarkType.Free;
-
-    mPlayer1Turn = true;
-    //inerate all buttons
-    Container.Children.Cast<Button>().ToList().ForEach(button =>
-    {
-        button.Content = string.Empty;
-    });
-}
-    }
-}
