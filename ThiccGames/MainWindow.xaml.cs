@@ -1,4 +1,7 @@
-﻿using System;
+﻿/// <summary>
+/// AngelSix
+/// </summary>
+using System;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -157,4 +160,4 @@ namespace ThiccGames
         #endregion
     }
 }
-/// ty AngelSix
+
